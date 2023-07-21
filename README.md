@@ -38,6 +38,17 @@ Edit the **config.json** with :
 - **gen_cooldown_hours**, user cooldown in hours (default is 1).
 - **gen_cooldown_minutes**, user cooldown in minutes (default is 0).
 - **gen_cooldown_seconds**, user cooldown in seconds (default is 0).
+
+When everything is ready, run the bot.
+
+```bash
+  node .
+```
+or
+```bash
+  node index.js
+```
+  
 ## Environment Variables
 
 To run this project, you will need to add the following environment variables to your **.env** file.
