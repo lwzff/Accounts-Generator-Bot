@@ -1,0 +1,18 @@
+{
+    "developerGuildId": "GUILD_ID",
+
+    "enable_logs": true,
+    "logs_channel_id": "LOGS_CHANNEL_ID",
+
+    "stock_channel_id": "STOCK_CHANNEL_ID",
+    "stock_auto_refresh": true,
+    "auto_refresh_rate": 60000,
+
+    "gen_cooldown_hours": 1,
+    "gen_cooldown_minutes": 0,
+    "gen_cooldown_seconds": 0,
+
+    "developers": [
+        "283212902247432192"
+    ]
+}
