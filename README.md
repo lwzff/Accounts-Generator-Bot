@@ -5,7 +5,15 @@ Except this shitty name, this bot is a simple "accounts generator" for your Disc
 
 ℹ️ *Note: This bot doesn't generate/create/find accounts itself, you need to provide the accounts.*
 
+## Environment Variables
 
+To run this project, you will need to add the following environment variables to your **.env** file.
+
+`BOT_TOKEN`=`my_discord_bot_token`
+
+Follow [this guide](https://github.com/reactiflux/discord-irc/wiki/Creating-a-discord-bot-&-getting-a-token) for more information on how to create a bot and getting a token.
+
+`DATABASE`=`my_mongodb_cluster_url`
 
 ## Installation
 
@@ -48,17 +56,6 @@ or
 ```bash
   node index.js
 ```
-  
-## Environment Variables
-
-To run this project, you will need to add the following environment variables to your **.env** file.
-
-`BOT_TOKEN`=`my_discord_bot_token`
-
-Follow [this guide](https://github.com/reactiflux/discord-irc/wiki/Creating-a-discord-bot-&-getting-a-token) for more information on how to create a bot and getting a token.
-
-`DATABASE`=`my_mongodb_cluster_url`
-
 
 ## License
 
