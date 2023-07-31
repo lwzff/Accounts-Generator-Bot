@@ -5,7 +5,6 @@ module.exports = {
     data: new SlashCommandBuilder()
         .setName("generate")
         .setDescription("Generate command.")
-        .setDefaultMemberPermissions(0)
         .addStringOption(option =>
             option
                 .setName('service')

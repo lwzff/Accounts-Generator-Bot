@@ -33,9 +33,28 @@ module.exports = {
                 });
                 
             }, client.config.auto_refresh_rate);
-
-
         }
+
+        // Check gen access users
+        setInterval( async () => {
+            const genAccessUsers = await client.models.gen_access.find();
+            if (!genAccessUsers) return;
+            else {
+                genAccessUsers.forEach( async genAccessUser => {
+                    if (genAccessUser.access_end_time > Math.floor(new Date().getTime() / 1000)) return;
+                    const user = await client.guilds.cache.get(client.config.developerGuildId).members.cache.get(genAccessUser.user_id);
+                    await user?.roles.remove(genAccessUser.role);
+                    await user?.send({ content: `⌛ You have no longer access to the **Accounts Generator**.` }).catch(err => { return; });
+                    await client.models.gen_access.deleteMany({
+                        access_end_time: genAccessUser.access_end_time,
+                        user_id: user.id,
+                        guild_id: client.config.developerGuildId
+                    });
+                    console.log(`${user?.user.tag} (${user?.user.id}) has been removed from the generator access.`);
+                    if (client.config.enable_logs) await client.guilds.cache.get(client.config.developerGuildId).channels.cache.get(client.config.logs_channel_id).send({ content: `${user?.user.tag} (${user?.user.id}) has **no more access** to the generator.` }).catch( (err) => { console.log('Unable to send logs in channel') });
+                });
+            }
+        }, 1000 * 5);
         
     }
 }

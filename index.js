@@ -26,6 +26,7 @@ client.models = new Collection();
 client.models.services = require('./models/services');
 client.models.accounts = require('./models/accounts');
 client.models.users = require('./models/users');
+client.models.gen_access = require('./models/gen-access');
 
 // Crash handling system.
 process.on('unhandledRejection', async (reason, promise) => {
